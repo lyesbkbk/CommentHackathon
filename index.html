@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulateur</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div id="heading">
+        <img width = "50%" height = "100%" src="logo_comment.png" alt="logo" id="logo">
+        <h2>Simulateur de coût</h2>
+    </div>
+    <div id="container">
+            <form >
+              <div id="box1">
+                <label for="surface">Surface de logement</label>
+                <input type="text" name = "surface" id = "surface">
+                <label for="département">Département</label>
+                <input type="text" name = "dep">
+                <label for="type">Type de logement</label>
+                <select name="type" id="type">
+                    <option value="appartement">Appartement</option>
+                    <option value="maison">Maison</option>
+                </select>
+                <label for="nomb_fen_st">Nombre de fenêtre standard</label>
+                <input type="text" name = "nomb_fen_st" id = "nfst">
+                <label for="nom_fen_spe">Nombre de fenêtre spécifique</label>
+                <input type="text" name = "nom_fen_spe" id = "nfsp">
+              </div>
+              <div id="box2">
+                <label for="qest1">Date de construction</label>
+                <select name="qest1" id="qest1">
+                    <option value="01">Ancien (avant 1940)</option>
+                    <option value="02">Semi-récent (entre 1970 et 2000)</option>
+                    <option value="03">Récent (après 2000)</option>
+                </select>
+                <label for="qest2">Corps d'état</label>
+                <select name="qest2" id="qest2">
+                    <option value="01">Démolition</option>
+                    <option value="02">Cloisonnement</option>
+                    <option value="03">Electricité</option>
+                    <option value="04">Salle de bain</option>
+                    <option value="05"> Peinture</option>
+                    <option value="06">Sol</option>
+                    <option value="07">Fenêtre - Standard</option>
+                    <option value="08">Fenêtre - Spécifique</option>
+                    <option value="09">Menuiserie Bois (placard et meuble)</option>
+                </select>
+                <button onclick = "event.preventDefault();reponse()" >Suivant</button>
+               </div>
+               <div id="box3">
+                <label for="qest3">Niveau du travaux</label>
+                <select name="qest3" id="qest3">
+                    <option value="01">Un seul mur et retirer ce papier peint vintage pas du tout à mon goût (déso mamie)</option>
+                    <option value="02">Quelques cloisons (déso les voisins)</option>
+                    <option value="03">On fait tout sauter (encore plus déso les voisins)</option>
+                </select>
+                <button onclick = "event.preventDefault(); calculer()">Calculer</button>
+               </div>
+               <div id="box4">
+                <label for="qest4">Niveau du travaux</label>
+                <select name="qest4" id="qest4">
+                    <option value="01">Un seul mur de démoli donc juste quelques raccords à prévoir</option>
+                    <option value="02">Il faut revoir quelques volumes et peut-être un faux plafond</option>
+                    <option value="03">Puisque j’ai décidé de tout casser, va falloir la totale (cloisonnement, isolation, création de niches)</option>
+                </select>
+                <button onclick = "event.preventDefault(); calculer()">Calculer</button>
+               </div>
+               <div id="box5">
+                <label for="qest5">Niveau du travaux</label>
+                <select name="qest5" id="qest5">
+                    <option value="01">Je veux juste compléter l’installation avec 1 ou 2 prises, 1 point lumineux en plus</option>
+                    <option value="02">Je dois mettre de nouvelles prises et plusieurs points lumineux (+ de 2)</option>
+                    <option value="03">Tout est à refaire !</option>
+                </select>
+                <button onclick = "event.preventDefault(); calculer()">Calculer</button>
+               </div>
+               <div id="box6">
+                <label for="qest6">Niveau du travaux</label>
+                <select name="qest6" id="qest6">
+                    <option value="01">Je dois juste remplacer un élément</option>
+                    <option value="02">Je refais la Salle de bain partiellement et change quelques équipements</option>
+                    <option value="03">Je casse tout et refais tout (je peux même la changer de place)</option>
+                </select>
+                <button onclick = "event.preventDefault(); calculer()">Calculer</button>
+               </div>
+               <div id="box7">
+                <label for="qest7">Niveau du travaux</label>
+                <select name="qest7" id="qest7">
+                    <option value="01">Juste un coup de frais sur les murs</option>
+                    <option value="02">Il faut tout repeindre, des murs aux plafondss</option>
+                    <option value="03">C’est la grotte de Lascaux, il va falloir lisser les murs et refaire les Peintures</option>
+                </select>
+                <button onclick = "event.preventDefault(); calculer()">Calculer</button>
+               </div>
+               <div id="box8">
+                <label for="qest8">Niveau du travaux</label>
+                <select name="qest8" id="qest8">
+                    <option value="01">Une seule pièce est concernée</option>
+                    <option value="02">Prévoir le Sol entre 2 et 3 pièces</option>
+                    <option value="03">Tout est à refaire, même un réagréage !</option>
+                </select>
+                <button onclick = "event.preventDefault(); calculer()">Calculer</button>
+               </div>
+               <div id="box9">
+                <label for="qest9">Niveau du travaux</label>
+                <select name="qest9" id="qest9">
+                    <option value="01">Une simple révision fera l'affaire</option>
+                    <option value="02">On remplace : Dimension standard</option>
+                </select>
+                <button onclick = "event.preventDefault(); calculer()">Calculer</button>
+               </div>
+               <div id="box10">
+                <label for="qest10">Niveau du travaux</label>
+                <select name="qest10" id="qest10">
+                    <option value="01">Une simple révision fera l'affaire</option>
+                    <option value="02"> On remplace : Dimension standard</option>
+                </select>
+                <button onclick = "event.preventDefault(); calculer()">Calculer</button>
+               </div>
+               <div id="box11">
+                <label for="qest11">Niveau du travaux</label>
+                <select name="qest11" id="qest11">
+                    <option value="01">J’ai juste besoin d’aménager un placard</option>
+                    <option value="02">J’ai au moins deux placards à aménager</option>
+                    <option value="03">J’ai plusieurs placards à aménager et/ou des menuiseries sur mesure à prévoir</option>
+                </select>
+                <button onclick = "event.preventDefault(); calculer()">Calculer</button>
+               </div>
+               <div id="box12">
+               </div>
+            </form>
+    </div>
+</body>
+</html>
